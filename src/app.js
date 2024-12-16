@@ -19,7 +19,14 @@ app.use(
   }),
 );
 
-export default app;
 
+//routes import
+import userRouter from "./routes/user.routes.js";
+
+app.use("/api/v1/users", userRouter);
+
+
+//routes declaration
+export default app;
 
 
