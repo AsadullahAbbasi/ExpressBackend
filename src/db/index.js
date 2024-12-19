@@ -9,6 +9,8 @@ const connectDb = async () => {
     try {
        const connection= await mongoose.connect(`${process.env.MONGODB_URI }/${DB_NAME}`);
         console.log("Connected to MongoDB"+connection.connection.host);
+        console.log("running on port","http://localhost:"+process.env.PORT);
+        
         return connection
     } catch (error) {
         console.log("Error at index.js line 8",error);
