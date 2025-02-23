@@ -6,7 +6,7 @@ const userShema = new Schema(
     userName: {
       type: String,
       required: true,
-      lowercase: true,
+      lowercase: true, 
       trim: true,
       index: true,
     },
@@ -26,7 +26,7 @@ const userShema = new Schema(
     },
     coverImage: {
       type: String, //cloudinary url
-      required: true,
+      // required: true,
     },
     watchHistory: [{ type: Schema.Types.ObjectId, ref: "Video" }],
     password: {
@@ -34,6 +34,9 @@ const userShema = new Schema(
       required: true,
       trim: [true, "Password is required"],
     },
+    refreshToken: {
+      type: String
+  }
   },
   {
     timestamps: true,
@@ -42,8 +45,10 @@ const userShema = new Schema(
 
 
 userShema.pre("save", async function (next) {
+  console.log("pre save");
+  
   const salt = await bcrypt.genSalt(10);
-  if( this.isModified("password") ) return next();
+  if( !this.isModified("password") ) return next();
   this.password = await bcrypt.hash(this.password, salt); 
   next();
 });
@@ -56,8 +61,10 @@ userShema.methods.generateAcessToken = function () {
   const token = jwt.sign({ _id: this._id , userName: this.userName, email: this.email, fullName: this.fullName}, process.env.JWT_SECRET, {
     expiresIn: process.env.Acess_Token_Expiry,
   }); //we donr embed password in token due to security measure
+  //es6 shorthand syntax can only use with variable name same as key name but here we are using different name so we have to use longhand syntax
   return token;
 };
+
 
 userShema.methods.generateRefreshToken = function () {
   const token = jwt.sign({ _id: this._id}, process.env.JWT_SECRET, {
@@ -65,3 +72,5 @@ userShema.methods.generateRefreshToken = function () {
   }); //we donr embed password in token due to security measure
   return token;
 };
+
+export default mongoose.model("User", userShema);
