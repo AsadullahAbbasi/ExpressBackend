@@ -50,9 +50,3 @@ export const Video = mongoose.model("Video", vedioSchema);
 
 
 
-const asad = (cb)=>{
-cb(1,2)
-}
-asad((n1,n2)=>{
-  n1 + n2
-})

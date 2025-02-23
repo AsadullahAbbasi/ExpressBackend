@@ -1,41 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Upload</title>
+  <title>Firebase Data Read (CDN)</title>
 </head>
 <body>
-    <h1>Upload a File</h1>
-    <form id="uploadForm" enctype="multipart/form-data">
-        <label for="file">Choose a file:</label>
-        <input type="file" id="file" name="file" required>
-        <button type="submit">Upload</button>
-    </form>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
 
-    <div id="response"></div>
+  <script>
+    // Firebase configuration (replace with your provided config)
+    const firebaseConfig = {
+      projectId: "portal-hiringmine",
+      appId: "1:587359323091:web:1b7130824f5bee5a3e6526",
+      storageBucket: "portal-hiringmine.firebasestorage.app",
+      authDomain: "portal-hiringmine.firebaseapp.com",
+      messagingSenderId: "587359323091",
+      measurementId: "G-W1N75JMSXF",
+    };
 
-    <script>
-        const form = document.getElementById('uploadForm');
-        const responseDiv = document.getElementById('response');
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Prevent default navigation
+    // Get a reference to the database
+    const database = firebase.database();
 
-            const formData = new FormData(form);
+    // Function to read data from the Realtime Database
+    function readRealtimeData(path) {
+      const dataRef = database.ref(path); // e.g., 'users/123'
+      dataRef.get().then((snapshot) => {
+        if (snapshot.exists()) {
+          console.log("Realtime Database Data:", snapshot.val());
+        } else {
+          console.log("No data found at the specified Realtime Database path.");
+        }
+      }).catch((error) => {
+        console.error("Error reading Realtime Database data:", error);
+      });
+    }
 
-            try {
-                const response = await fetch('http://localhost:5500/upload', {
-                    method: 'POST',
-                    body: formData,
-                });
+    // Example usage: Read data from 'users/someUserId'
+    readRealtimeData("users/someUserId"); // Replace 'someUserId'
 
-                const result = await response.json();
-                responseDiv.textContent = `Upload Successful: ${result.originalName}`;
-            } catch (error) {
-                responseDiv.textContent = `Error: ${error.message}`;
+    // Get a reference to Firestore
+    const db = firebase.firestore();
+
+    //Function to read firestore data.
+    function readFirestoreData(collection, documentId) {
+        db.collection(collection).doc(documentId).get().then((doc) => {
+            if (doc.exists) {
+                console.log("Firestore Data:", doc.data());
+            } else {
+                console.log("No such document!");
             }
+        }).catch((error) => {
+            console.error("Error getting Firestore document:", error);
         });
-    </script>
+    }
+
+    //Example Usage:
+    readFirestoreData("collectionName", "documentId"); //replace collectionName and documentId.
+
+  </script>
 </body>
 </html>

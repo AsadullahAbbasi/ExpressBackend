@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+<html lang="en" id="rootElem" style="">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gimme Source Code</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="./img/bracket.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div id="container">
+    <main>
+      <header class="absolute inset-x-0 top-0 z-50">
+        <nav class="flex items-center justify-between p-6 lg:px-6">
+          <div class="flex lg:flex-1">
+            <a href="/" class="-m-1.5 p-1.5"><img class="h-14 w-auto" src="./img/bracket.png" alt="Logo" /></a>
+            <span class="flex items-center lg:text-2xl md:text-xl" style="
+                  margin: 0px 16px 0px 0px;
+
+                  line-height: 1.6;
+                  letter-spacing: 0.0075em;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  color: black;
+                  font-weight: 400;
+                  text-decoration: none;
+                  cursor: pointer;
+                ">Gimme Source Code</span>
+          </div>
+          <div class="flex lg:hidden">
+            <button onclick="toggleFixedClass(event)" type="button"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-700">
+              <span class="sr-only">Open menu</span><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
+                </path>
+              </svg>
+            </button>
+          </div>
+          <div class="hidden lg:flex lg:gap-x-12">
+            <a href="#services" class="text-sm font-semibold leading-6 text-slate-900">Services</a><a href="#portfolio"
+              class="text-sm font-semibold leading-6 text-slate-900">Portfolio</a><a href="#pricing"
+              class="text-sm font-semibold leading-6 text-slate-900">Pricing</a>
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="https://cal.com/nomangul/30min" target="_blank"
+              class="mx-1 text-sm text-white font-semibold bg-emerald-400 py-3 px-5 rounded-xl hover:bg-emerald-500">Book
+              Discovery Call</a>
+          </div>
+        </nav>
+        <div style="
+              position: fixed;
+              top: 1px;
+              left: 1px;
+              width: 1px;
+              height: 0;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0, 0, 0, 0);
+              white-space: nowrap;
+              border-width: 0;
+              display: none;
+            "></div>
+      </header>
+      <section id="hero" class="bg-emerald-200/40 py-40 lg:py-24">
+        <div
+          class="grid place-items-center max-w-screen-xl text-center lg:text-left p-6 mx-auto lg:gap-8 xl:gap-0 lg:px-8 lg:py-16 lg:grid-cols-12">
+          <div class="mx-auto lg:mr-auto place-self-center lg:col-span-7">
+            <div class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+              <h1 class="mr-2">Turn your Idea into a</h1>
+              <p id="textElement"
+                class="text-emerald-400 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white">
+                AI Web App
+              </p>
+            </div>
+            <p class="max-w-2xl mb-6 font-light text-slate-600 lg:mb-8 md:text-xl lg:text-2xl">
+              Crafting Code and Building the Future: Kick-ass Software for Startups, One Flat Fee.
+            </p>
+            <a href="https://cal.com/nomangul/30min"
+              class="inline-flex items-center justify-center px-5 py-3 font-semibold text-center text-white text-lg bg-emerald-400 rounded-xl hover:bg-emerald-500">Book
+              a Call</a>
+          </div>
+          <div class="mt-12 max-w-lg h-4/5 mx-auto text-center lg:mt-0 lg:col-span-5 lg:flex">
+            <img src="./img/card.jpeg"
+              class="mx-auto rounded-2xl drop-shadow-2xl lg:rotate-2 lg:transform lg:hover:-rotate-2 lg:transition-transform lg:duration-300 lg:ease-in-out"
+              alt="mockup" />
+          </div>
+        </div>
+      </section>
+      <section id="services" class="bg-white py-24">
+        <div class="mx-auto max-w-screen-xl p-6 lg:px-8">
+          <div class="mx-auto text-center max-w-3xl mb-16">
+            <h2 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">What can we do for you?</h2>
+            <p class="mt-4 mb-2 text-lg leading-8 text-slate-800">
+              The question would be: what can we <strong>NOT</strong> do?
+            </p>
+            <span class="text-emerald-400 font-extrabold">For anything involving Full Stack Development, we got you
+              covered.</span>
+          </div>
+          <div class="space-y-8 grid md:grid md:grid-cols-3 lg:grid-cols-3 md:gap-12 md:space-y-0">
+            <div class="text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" class="mx-auto h-10 w-10 mb-6 text-emerald-400">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"></path>
+              </svg>
+              <h3 class="mb-2 text-xl font-bold">Web App MVP</h3>
+              <p class="text-slate-500">From zero to a functional product. Your customers will love it.</p>
+            </div>
+            <div class="text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" class="mx-auto h-10 w-10 mb-6 text-emerald-400">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z">
+                </path>
+              </svg>
+              <h3 class="mb-2 text-xl font-bold">AI Project</h3>
+              <p class="text-slate-500">
+                Our experience with the latest AI technologies, makes us the perfect candidate to bring your idea to
+                life.
+              </p>
+            </div>
+            <div class="text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" class="mx-auto h-10 w-10 mb-6 text-emerald-400">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42">
+                </path>
+              </svg>
+              <h3 class="mb-2 text-xl font-bold">Landing Page</h3>
+              <p class="text-slate-500">Get a high converting website that displays the best side of your product.</p>
+            </div>
+            <div class="text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" class="mx-auto h-10 w-10 mb-6 text-emerald-400">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8.25V18a2.25 2.25 0 002.25 2.25h13.5A2.25 2.25 0 0021 18V8.25m-18 0V6a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6zM7.5 6h.008v.008H7.5V6zm2.25 0h.008v.008H9.75V6z">
+                </path>
+              </svg>
+              <h3 class="mb-2 text-xl font-bold">Mobile App</h3>
+              <p class="text-slate-500">
+                Enhance your user experience by integrating your products directly into your mobile device.
+              </p>
+            </div>
+            <div class="text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" class="mx-auto h-10 w-10 mb-6 text-emerald-400">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0112 12.75zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 01-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 002.248-2.354M12 12.75a2.25 2.25 0 01-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 00-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 01.4-2.253M12 8.25a2.25 2.25 0 00-2.248 2.146M12 8.25a2.25 2.25 0 012.248 2.146M8.683 5a6.032 6.032 0 01-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0115.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 00-.575-1.752M4.921 6a24.048 24.048 0 00-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 01-5.223 1.082">
+                </path>
+              </svg>
+              <h3 class="mb-2 text-xl font-bold">Full Stack Software Development</h3>
+              <p class="text-slate-500">Let us take care of that functionality you have been meaning to implement.</p>
+            </div>
+            <div class="text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" class="mx-auto h-10 w-10 mb-6 text-emerald-400">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z">
+                </path>
+              </svg>
+              <h3 class="mb-2 text-xl font-bold">Consulting</h3>
+              <p class="text-slate-500">
+                You don't know if something can be implemented? Do you know how long it will take? Or how much will it
+                cost? Ask us!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="portfolio" class="bg-emerald-50/80 py-32">
+        <div class="mx-auto max-w-screen-xl p-6 lg:px-8">
+          <div class="mx-auto text-center max-w-3xl mb-16">
+            <h2 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Previous Work</h2>
+            <p class="mt-4 mb-2 text-lg leading-8 text-slate-800">Here are some examples of our work</p>
+          </div>
+          <div class="space-y-8 md:grid md:grid-cols-1 lg:grid-cols-3 md:gap-12 md:space-y-0">
+            <div>
+              <img src="./img/image.png"
+                class="w-full rounded-xl drop-shadow-xl mx-auto mb-5 transform hover:-rotate-2 transition-transform duration-300 ease-in-out" /><span
+                class="text-white text-xs px-2.5 py-1.5 rounded-lg bg-emerald-800">Web App</span>
+              <h3 class="mt-3 mb-2 text-xl font-bold">Billgist</h3>
+              <p class="mb-4 text-slate-500">
+                Billgist is a cloud cost management solution to help users stay on top of their AWS bills. We are a
+                globally working towards a unified goal of predictable cloud bills.
+              </p>
+              <a href="https://www.billgist.com/" target="_blank"
+                class="px-5 py-3 font-semibold text-center text-emerald-500 text-sm rounded-xl border-2 border-emerald-500">Preview</a>
+            </div>
+            <div>
+              <img src="./img/ai.png"
+                class="w-full rounded-xl drop-shadow-xl mx-auto mb-5 transform hover:-rotate-2 transition-transform duration-300 ease-in-out" /><span
+                class="text-white text-xs px-2.5 py-1.5 rounded-lg bg-emerald-600">AI Web App</span>
+              <h3 class="mt-3 mb-2 text-xl font-bold">Atlas Pro AI</h3>
+              <p class="mb-4 text-slate-500">
+                Our Geospatial Multi-Agent System (GMAS) automates tasks related to geospatial data, such as:
+                detecting poles, auto-measuring road width, and identifying prime target markets
+              </p>
+              <a href="https://www.atlaspro.ai/" target="_blank"
+                class="px-5 py-3 font-semibold text-center text-emerald-500 text-sm rounded-xl border-2 border-emerald-500">Preview</a>
+            </div>
+            <div>
+              <img src="./img/mobileApp.png"
+                class="w-full rounded-xl drop-shadow-xl mx-auto mb-5 transform hover:-rotate-2 transition-transform duration-300 ease-in-out" /><span
+                class="text-white text-xs px-2.5 py-1.5 rounded-lg bg-emerald-400">Mobile App</span>
+              <h3 class="mt-3 mb-2 text-xl font-bold">Care Clinic</h3>
+              <p class="mb-4 text-slate-500">
+                Care Clinic is a clinically-studied Health Tracker App that simplifies managing your health and
+                well-being. Make check-ins with Trackers and Discover insights and correlations to share with your
+                doctor.
+              </p>
+              <a href="https://play.google.com/store/apps/details?id=com.careclinicsoftware.careclinic" target="_blank"
+                class="px-5 py-3 font-semibold text-center text-emerald-500 text-sm rounded-xl border-2 border-emerald-500">
+                Preview
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="technologies" class="bg-white py-24">
+        <div class="mx-auto max-w-7xl p-6 lg:px-8">
+          <h2 class="text-center text-4xl font-bold leading-8 text-slate-900">Some technologies we use</h2>
+          <div class="mx-auto mt-12 max-w-2xl gap-10 flex items-center justify-center flex-wrap">
+            <img class="object-cover" src="./img/react.png" alt="React" width="330" />
+            <img class="max-h-16 object-contain" src="./img/reactnative-removebg-preview.png" alt="Python" width="258"
+              height="48" />
+            <img class="max-h-16 object-contain" src="./img/mern0.png  " alt="TailwindCSS" width="158" height="48" />
+            <img class="max-h-16 object-contain" src="./img/node.png"
+              class="mx-auto rounded-2xl drop-shadow-2xl lg:rotate-2 lg:transform lg:hover:-rotate-2 lg:transition-transform lg:duration-300 lg:ease-in-out"
+              alt="mockup" />
+            <img class="max-h-16 object-contain" src="./img/aws.png"
+              class="mx-auto rounded-2xl drop-shadow-2xl lg:rotate-2 lg:transform lg:hover:-rotate-2 lg:transition-transform lg:duration-300 lg:ease-in-out"
+              alt="mockup" />
+          </div>
+        </div>
+      </section>
+      <section id="benefits" class="overflow-hidden bg-emerald-50/80 py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div
+            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div class="lg:pr-8 lg:pt-4">
+              <div class="lg:max-w-lg">
+                <h2 class="font-extrabold leading-7 text-emerald-400">Why us?</h2>
+                <p class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Benefits</p>
+                <p class="mt-6 text-lg leading-8 text-slate-600">
+                  If you were not convinced yet, here are some perks of working with us:
+                </p>
+                <dl class="mt-10 max-w-xl space-y-8 leading-7 text-slate-600 lg:max-w-none">
+                  <div>
+                    <dt class="flex items-center font-semibold text-xl text-slate-900">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" aria-hidden="true"
+                        class="inline-flex h-10 w-10 p-2 me-3 rounded-full bg-emerald-400 text-white">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
+                      </svg>
+                      Lightning fast service.
+                    </dt>
+                  </div>
+                  <div>
+                    <dt class="flex items-center font-semibold text-xl text-slate-900">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" aria-hidden="true"
+                        class="inline-flex h-10 w-10 p-2 me-3 rounded-full bg-emerald-400 text-white">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                      </svg>
+                      Fixed price. No surprises.
+                    </dt>
+                  </div>
+                  <div>
+                    <dt class="flex items-center font-semibold text-xl text-slate-900">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" aria-hidden="true"
+                        class="inline-flex h-10 w-10 p-2 me-3 rounded-full bg-emerald-400 text-white">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z">
+                        </path>
+                      </svg>
+                      Top-notch quality.
+                    </dt>
+                  </div>
+                  <div>
+                    <dt class="flex items-center font-semibold text-xl text-slate-900">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" aria-hidden="true"
+                        class="inline-flex h-10 w-10 p-2 me-3 rounded-full bg-emerald-400 text-white">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33">
+                        </path>
+                      </svg>
+                      100% personalized and owned by you.
+                    </dt>
+                  </div>
+                </dl>
+              </div>
+            </div>
+            <div class="h-fit">
+              <video controls="" class="mx-auto w-96 rounded-lg">
+                <source src="./img/intro.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="pricing" class="bg-white py-24">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div class="mx-auto max-w-screen-md text-center mb-12 lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-slate-900">Fixed prices for every project</h2>
+            <p class="mb-5 font-light text-slate-500 sm:text-xl">
+              If you want to explore another type of project, let us know!
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-16 items-center justify-center">
+            <div class="flex flex-col p-6 max-w-xs min-w-16 text-center text-slate-900 bg-white rounded-xl border border-slate-100 shadow-lg p-8">
+              <div class="mb-4">
+                <img src="https://img.icons8.com/?size=100&id=24870&format=png&color=000000" alt="Landing Page" class="mx-auto w-12 h-12"/>
+              </div>
+              <h3 class="mb-2 text-2xl font-semibold">Landing Page</h3>
+              <p class="font-light text-slate-500 text-md">A fully responsive and visually appealing landing page designed to boost conversions.</p>
+              <span class="mt-6 text-slate-500">Starting at</span>
+              <span class="mt-2 text-5xl font-extrabold">$799</span>
+              <p class="font-light mb-6 text-sm text-slate-500">In less than 48 hours.</p>
+              <div class="flex-grow"></div>
+              <a href="https://cal.com/nomangul/30min" class="inline-flex items-center justify-center px-5 py-3 font-semibold text-center text-white text-md bg-emerald-400 rounded-xl hover:bg-emerald-500">Book Discovery Call</a>
+            </div>
+            <div class="flex flex-col p-6 max-w-xs min-w-16 text-center text-slate-900 bg-white rounded-xl border border-slate-100 shadow-lg p-8">
+              <div class="mb-4">
+                <img src="https://img.icons8.com/?size=100&id=4mgNIGE8ptEb&format=png&color=000000" alt="Web App" class="mx-auto w-12 h-12"/>
+              </div>
+              <h3 class="mb-2 text-2xl font-semibold">Web App</h3>
+              <p class="font-light text-slate-500 text-md">A custom web application with essential features tailored to your business needs.</p>
+              <span class="mt-6 text-slate-500">Starting at</span>
+              <span class="mt-2 text-5xl font-extrabold">$2,800</span>
+              <p class="font-light mb-6 text-sm text-slate-500">In less than a month.</p>
+              <div class="flex-grow"></div>
+              <a href="https://cal.com/nomangul/30min" class="inline-flex items-center justify-center px-5 py-3 font-semibold text-center text-white text-md bg-emerald-400 rounded-xl hover:bg-emerald-500">Book Discovery Call</a>
+            </div>
+            <div class="flex flex-col p-6 max-w-xs min-w-16 text-center text-slate-900 bg-white rounded-xl border border-slate-100 shadow-lg p-8">
+              <div class="mb-4">
+                <img src="https://img.icons8.com/?size=100&id=u9wCTmrEESaH&format=png&color=000000" alt="Mobile App" class="mx-auto w-12 h-12"/>
+              </div>
+              <h3 class="mb-2 text-2xl font-semibold">Mobile App</h3>
+              <p class="font-light text-slate-500 text-md">A high-performance mobile application compatible with both iOS and Android.</p>
+              <span class="mt-6 text-slate-500">Starting at</span>
+              <span class="mt-2 text-5xl font-extrabold">$3,200</span>
+              <p class="font-light mb-6 text-sm text-slate-500">In less than a month.</p>
+              <div class="flex-grow"></div>
+              <a href="https://cal.com/nomangul/30min" class="inline-flex items-center justify-center px-5 py-3 font-semibold text-center text-white text-md bg-emerald-400 rounded-xl hover:bg-emerald-500">Book Discovery Call</a>
+            </div>
+            <div class="flex flex-col p-6 max-w-xs min-w-16 text-center text-slate-900 bg-white rounded-xl border border-slate-100 shadow-lg p-8">
+              <div class="mb-4">
+                <img src="https://img.icons8.com/?size=100&id=999&format=png&color=000000" alt="MVP" class="mx-auto w-12 h-12"/>
+              </div>
+              <h3 class="mb-2 text-2xl font-semibold">MVP</h3>
+              <p class="font-light text-slate-500 text-md">A Minimum Viable Product to validate your business idea, including core features and rapid development.</p>
+              <span class="mt-6 text-slate-500">Starting at</span>
+              <span class="mt-2 text-5xl font-extrabold">$6,000</span>
+              <p class="font-light mb-6 text-sm text-slate-500">In less than a month.</p>
+              <div class="flex-grow"></div>
+              <a href="https://cal.com/nomangul/30min" class="inline-flex items-center justify-center px-5 py-3 font-semibold text-center text-white text-md bg-emerald-400 rounded-xl hover:bg-emerald-500">Book Discovery Call</a>
+            </div>
+            <div class="flex flex-col p-6 max-w-xs min-w-16 text-center text-slate-900 bg-white rounded-xl border border-slate-100 shadow-lg p-8">
+              <div class="mb-4">
+                <img src="https://img.icons8.com/?size=100&id=7479&format=png&color=000000" alt="Subscription Plan" class="mx-auto w-12 h-12"/>
+              </div>
+              <h3 class="mb-2 text-2xl font-semibold">Subscription Plan</h3>
+              <p class="font-light text-slate-500 text-md">Enjoy ongoing development and support with our subscription-based service.</p>
+              <span class="mt-6 text-slate-500">Starting at</span>
+              <span class="mt-2 text-5xl font-extrabold">$1,000</span>
+              <p class="font-light mb-6 text-sm text-slate-500">per month.</p>
+              <div class="flex-grow"></div>
+              <a href="https://cal.com/nomangul/30min" class="inline-flex items-center justify-center px-5 py-3 font-semibold text-center text-white text-md bg-emerald-400 rounded-xl hover:bg-emerald-500">Subscribe Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="p-4 bg-white md:p-8 lg:p-10">
+        <div class="mx-auto max-w-screen-xl text-center">
+          <a href="#" class="flex justify-center items-center"><img class="h-14 w-auto" src="./img/bracket.png"
+              alt="Logo" />
+            <span class="flex items-center lg:text-2xl md:text-xl" style="
+                  margin: 0px 16px 0px 0px;
+
+                  line-height: 1.6;
+                  letter-spacing: 0.0075em;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  color: black;
+                  font-weight: 400;
+                  text-decoration: none;
+                  cursor: pointer;
+                ">Gimme Source Code</span>
+          </a>
+
+          <ul class="flex flex-wrap justify-center items-center my-6 font-semibold text-slate-500">
+            <li>
+              <a href="#services" class="mx-4 hover:underline md:my-4">Services</a>
+            </li>
+            <li>
+              <a href="#portfolio" class="mx-4 hover:underline md:my-4">Portfolio</a>
+            </li>
+            <li>
+              <a href="#pricing" class="mx-4 hover:underline md:my-4">Pricing</a>
+            </li>
+          </ul>
+          <div class="mx-auto max-w-screen-xl flex justify-center lg:gap-6 gap-4 mb-2">
+            <a href="https://github.com/NomanGul" target="_blank"><svg
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vqzblx" focusable="false" aria-hidden="true"
+                viewBox="0 0 24 24" data-testid="GitHubIcon" width="24px">
+                <path fill="#24d399"
+                  d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27">
+                </path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/noman-gul/?originalSubdomain=pk" target="_blank"><svg
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vqzblx" focusable="false" aria-hidden="true"
+                viewBox="0 0 24 24" data-testid="GitHubIcon" width="24px">
+                <path fill="#24d399"
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z">
+                </path>
+              </svg>
+            </a>
+
+            <a href="https://twitter.com/NomanGulKhan" target="_blank">
+              <svg width="24" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-tbsct8" focusable="false"
+                aria-hidden="true" viewBox="0 0 24 24" data-testid="TwitterIcon">
+                <path fill="#24d399"
+                  d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z">
+                </path>
+              </svg>
+            </a>
+            <a href="mailto:nomangul2001@gmail.com" target="_blank"><svg width="24"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-tbsct8" focusable="false" aria-hidden="true"
+                viewBox="0 0 24 24" data-testid="EmailIcon">
+                <path fill="#24d399"
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4-8 5-8-5V6l8 5 8-5z">
+                </path>
+              </svg></a>
+
+            <a href="https://www.nomangul.com/" target="_blank"><svg width="24"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-tbsct8" focusable="false" aria-hidden="true"
+                viewBox="0 0 24 24" data-testid="PersonIcon">
+                <path fill="#24d399"
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4">
+                </path>
+              </svg></a>
+          </div>
+          <span class="text-sm text-slate-500 sm:text-center">© 2024 <a href="#" class="hover:underline">Gimme Source
+              Code</a>. All rights reserved.</span>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div id="headlessui-portal-root">
+    <div data-headlessui-portal="">
+      <button type="button" data-headlessui-focus-guard="true" aria-hidden="true" style="
+            position: fixed;
+            top: 1px;
+            left: 1px;
+            width: 1px;
+            height: 0px;
+            padding: 0px;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0px, 0px, 0px, 0px);
+            white-space: nowrap;
+            border-width: 0px;
+          "></button>
+      <div>
+        <div class="lg:hidden" id="headlessui-dialog-:R25m:" role="dialog" aria-modal="true"
+          data-headlessui-state="open"></div>
+      </div>
+      <button type="button" data-headlessui-focus-guard="true" aria-hidden="true" style="
+            position: fixed;
+            top: 1px;
+            left: 1px;
+            width: 1px;
+            height: 0px;
+            padding: 0px;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0px, 0px, 0px, 0px);
+            white-space: nowrap;
+            border-width: 0px;
+          "></button>
+    </div>
+  </div>
+
+  <p aria-live="assertive" id="__next-route-announcer__" role="alert" style="
+        border: 0px;
+        clip: rect(0px, 0px, 0px, 0px);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0px;
+        position: absolute;
+        top: 0px;
+        width: 1px;
+        white-space: nowrap;
+        overflow-wrap: normal;
+      "></p>
+  <div
+    class="hidden inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-slate-900/10"
+    id="close">
+    <div class="flex items-center justify-between">
+      <a href="#" class="-m-1.5 p-1.5 flex gap-3"><img class="h-8 w-auto" src="./img/bracket.png" alt="Logoss" />
+        <span class="flex items-center lg:text-2xl md:text-xl text-md" style="
+              margin: 0px 16px 0px 0px;
+
+              line-height: 1.6;
+              letter-spacing: 0.0075em;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              color: black;
+              font-weight: 400;
+              text-decoration: none;
+              cursor: pointer;
+            ">Gimme Source Code</span>
+      </a>
+
+      <button type="button" class="-m-2.5 rounded-md p-2.5 text-slate-700" onclick="toggleFixedClass(event)">
+        <span class="sr-only">Close menu</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="mt-6 flow-root">
+      <div class="-my-6 divide-y divide-slate-500/10">
+        <div class="space-y-2 py-6" onclick="toggleFixedClass(event)">
+          <a href="#services"
+            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50">Services</a><a
+            href="#portfolio"
+            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50">Portfolio</a><a
+            href="#pricing"
+            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50">Pricing</a>
+        </div>
+        <div class="py-6">
+          <a href="https://cal.com/nomangul/30min"
+            class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50">Book
+            Discovery Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const textElement = document.getElementById("textElement");
+    const textArray = ["Landing Page", "Web App", "Mobile App", "MVP"];
+
+    let index = 0;
+    var rootElement = document.getElementById("container");
+
+    function updateText() {
+      index = (index + 1) % textArray.length;
+      textElement.textContent = textArray[index];
+    }
+
+    setInterval(updateText, 4000);
+    const div = document.getElementById("close");
+    const html = document.documentElement;
+
+    function toggleFixedClass(event) {
+      event.stopPropagation();
+      div.classList.toggle("hidden");
+      div.classList.toggle("fixed");
+    }
+    function toggleHiddenClass(event) {
+      event.stopPropagation();
+      if (div.classList.contains("fixed")) {
+        div.classList.toggle("hidden");
+        div.classList.toggle("fixed");
+      }
+    }
+
+    rootElement.addEventListener("click", toggleHiddenClass);
+  </script>
+</body>
+
+</html>
